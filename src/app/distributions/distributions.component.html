@@ -1,3 +1,61 @@
-<p>distributions works!</p>
-<div style="height:600px"></div>
-<p>distribution end</p>
+<H2>distributions works!</H2>
+<H3>Bar chart</H3>
+<ngx-charts-bar-horizontal 
+	[results]="ngxCount"
+	[xAxisLabel]="'Fréquence'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Réponse'"
+	[legend]="true"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[gradient]="true">
+</ngx-charts-bar-horizontal>
+<H3>combo chart</H3>
+
+<app-custom-bar
+	[results]="bar"
+	[lineChart]="lines"
+	[scheme]="comboBarScheme"
+	[colorSchemeLine]="lineChartScheme"
+	[view]="[900,400]"
+	[tooltipDisabled]="true"
+	[legend]="false"
+
+
+>
+</app-custom-bar>
+
+<H3>NEXT</H3>
+<!--
+<app-custom-bar
+	[view]="view"
+	[scheme]="comboBarScheme"
+	[colorSchemeLine]="lineChartScheme"
+	[results]="barChart"
+	[animations]="animations"
+	[lineChart]="lineChartSeries"
+	[tooltipDisabled]="tooltipDisabled"
+	[yAxisTickFormatting]="yLeftTickFormat"
+	[yLeftAxisScaleFactor]="yLeftAxisScale"
+	[yRightAxisScaleFactor]="yRightAxisScale"
+	[yRightAxisTickFormatting]="yRightTickFormat"
+	[gradient]="gradient"
+	[xAxis]="showXAxis"
+	[yAxis]="showYAxis"
+	[legend]="showLegend"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="showGridLines"
+	[showXAxisLabel]="showXAxisLabel"
+	[showYAxisLabel]="showYAxisLabel"
+	[showRightYAxisLabel]="showYAxisLabel"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="noBarWhenZero"
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+-->

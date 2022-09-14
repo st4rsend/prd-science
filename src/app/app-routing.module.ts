@@ -8,8 +8,8 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'home', component: HomeComponent },
-	{ path: 'distributions', outlet: 'science', component:DistributionsComponent },
-	{ path: 'statistiques', outlet: 'science', component: StatistiquesComponent },
+	{ path: 'distributions', component:DistributionsComponent },
+	{ path: 'statistiques', component: StatistiquesComponent },
 	{ path: '**', component: HomeComponent }
 
 ];

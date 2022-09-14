@@ -7,6 +7,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
+		// for ngx-chart custom compilation
+		"noImplicitAny": false,
+		"strictNullChecks": false,
+		// eoc
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
