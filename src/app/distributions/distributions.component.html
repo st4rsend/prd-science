@@ -1,5 +1,7 @@
 <H2>distributions works!</H2>
+<!--
 <H3>Bar chart</H3>
+<div>
 <ngx-charts-bar-horizontal 
 	[results]="ngxCount"
 	[xAxisLabel]="'Fréquence'"
@@ -12,21 +14,38 @@
 	[yAxis]="true"
 	[gradient]="true">
 </ngx-charts-bar-horizontal>
+</div>
+-->
 <H3>combo chart</H3>
+<div class="graph">
 
 <app-custom-bar
-	[results]="bar"
+	[results]="bars"
 	[lineChart]="lines"
 	[scheme]="comboBarScheme"
+	[animations]="true"
 	[colorSchemeLine]="lineChartScheme"
-	[view]="[900,400]"
-	[tooltipDisabled]="true"
-	[legend]="false"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="true"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
 
 
+	(select)="onSelect($event)"
 >
 </app-custom-bar>
-
+</div>
 <H3>NEXT</H3>
 <!--
 <app-custom-bar

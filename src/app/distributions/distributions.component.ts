@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ScaleType } from '../ngx/common/types/scale-type.enum';
 import { Color, colorSets } from '../ngx/utils/color-sets';
+import { LegendPosition } from '../ngx/common/types/legend.model';
+import { single, lines } from './data';
 
 @Component({
   selector: 'app-distributions',
@@ -9,151 +11,10 @@ import { Color, colorSets } from '../ngx/utils/color-sets';
 })
 export class DistributionsComponent implements OnInit {
 
-	public ngxCount = [
-  {
-    "name": "Germany",
-    "value": 40632,
-    "extra": {
-      "code": "de"
-    }
-  },
-  {
-    "name": "United States",
-    "value": 50000,
-    "extra": {
-      "code": "us"
-    }
-  },
-  {
-    "name": "France",
-    "value": 36745,
-    "extra": {
-      "code": "fr"
-    }
-  },
-  {
-    "name": "United Kingdom",
-    "value": 36240,
-    "extra": {
-      "code": "uk"
-    }
-  },
-  {
-    "name": "Spain",
-    "value": 33000,
-    "extra": {
-      "code": "es"
-    }
-  },
-  {
-    "name": "Italy",
-    "value": 35800,
-    "extra": {
-      "code": "it"
-    }
-  }
-];
 
-public bar = [
-  {
-    "name": "USA",
-    "value": 50000
-  },
-  {
-    "name": "United Kingdom",
-    "value": 30000
-  },
-  {
-    "name": "France",
-    "value": 10000
-  },
-  {
-    "name": "Japan",
-    "value": 0
-  },
-  {
-    "name": "China",
-    "value": 500
-  }
-]
-
-public lines = [
-  {
-    "name": "Tablets",
-    "series": [
-      {
-        "name": "USA",
-        "value": 50
-      },
-      {
-        "value": 80,
-        "name": "United Kingdom"
-      },
-      {
-        "value": 85,
-        "name": "France"
-      },
-      {
-        "value": 90,
-        "name": "Japan"
-      },
-      {
-        "value": 100,
-        "name": "China"
-      }
-    ]
-  },
-  {
-    "name": "Cell Phones",
-    "series": [
-      {
-        "value": 10,
-        "name": "USA"
-      },
-      {
-        "value": 20,
-        "name": "United Kingdom"
-      },
-      {
-        "value": 30,
-        "name": "France"
-      },
-      {
-        "value": 40,
-        "name": "Japan"
-      },
-      {
-        "value": 10,
-        "name": "China"
-      }
-    ]
-  },
-  {
-    "name": "Computers",
-    "series": [
-      {
-        "value": 2,
-        "name": "USA"
-      },
-      {
-        "value": 4,
-        "name": "United Kingdom"
-      },
-      {
-        "value": 20,
-        "name": "France"
-      },
-      {
-        "value": 30,
-        "name": "Japan"
-      },
-      {
-        "value": 35,
-        "name": "China"
-      }
-    ]
-  }
-]
+	//public bars = single;
+	public bars : Array<{}> = [];
+	public lines = lines;
 
 	public lineChartScheme: Color = {
     name: 'coolthree',
@@ -171,13 +32,32 @@ public lines = [
 
   public showRightYAxisLabel: boolean = true;
   public yAxisLabelRight: string = 'Utilization';
+	
+	public xAxisLabel = 'Country';
+	public yAxisLabel = 'GDP Per Capita';
 
 
 	public legendTitle: string = 'default title';
+	public legendPosition = LegendPosition.Below;
+
+	public view: [800,400];
 
   constructor() { }
 
   ngOnInit(): void {
+		for (let i = 1; i<6; i++) {
+			let tmp = {
+				name: i.toString(),
+				value: i
+			};
+			this.bars.push(tmp);
+		};
+		console.log(this.bars);
   }
+
+	onSelect(event) {
+    console.log(event);
+  }
+
 
 }

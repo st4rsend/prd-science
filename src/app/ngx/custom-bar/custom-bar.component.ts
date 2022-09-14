@@ -21,10 +21,8 @@ import {
   ScaleType,
   Orientation,
   Color,
-//} from 'projects/swimlane/ngx-charts/src/public-api';
 } from '@swimlane/ngx-charts';
 
-//import { ComboSeriesVerticalComponent } from './combo-series-vertical.component.ts';
 
 @Component({
   selector: 'app-custom-bar',
@@ -416,8 +414,4 @@ export class CustomBarComponent extends BaseChartComponent {
 
     this.deactivate.emit({ value: item, entries: this.activeEntries });
   }
-
-
-
-
 }
