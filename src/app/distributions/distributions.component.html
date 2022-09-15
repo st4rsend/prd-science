@@ -31,7 +31,7 @@
 	[legend]="true"
 	[legendTitle]="legendTitle"
 	[legendPosition]="legendPosition"
-	[showGridLines]="true"
+	[showGridLines]="gridLines"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxisLabel]="xAxisLabel"
@@ -39,6 +39,12 @@
 	[yAxisLabelRight]="yAxisLabelRight"
 	[noBarWhenZero]="true"
 	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
+	[yAxisTickFormatting]="yLeftTickFormat"
+	[yLeftAxisScaleFactor]="yLeftAxisScale"
+	[yRightAxisScaleFactor]="yRightAxisScale"
+	[yRightAxisTickFormatting]="yRightTickFormat"
 	(select)="onSelect($event)"
 >
 </app-custom-bar>
@@ -58,7 +64,7 @@
 	[legend]="true"
 	[legendTitle]="legendTitle"
 	[legendPosition]="legendPosition"
-	[showGridLines]="true"
+	[showGridLines]="gridLines"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxisLabel]="xAxisLabel"
@@ -66,6 +72,8 @@
 	[yAxisLabelRight]="yAxisLabelRight"
 	[noBarWhenZero]="true"
 	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
 	(select)="onSelect($event)"
 >
 </app-custom-bar>
@@ -85,7 +93,7 @@
 	[legend]="true"
 	[legendTitle]="legendTitle"
 	[legendPosition]="legendPosition"
-	[showGridLines]="true"
+	[showGridLines]="gridLines"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxisLabel]="xAxisLabel"
@@ -93,6 +101,8 @@
 	[yAxisLabelRight]="yAxisLabelRight"
 	[noBarWhenZero]="true"
 	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
 	(select)="onSelect($event)"
 >
 </app-custom-bar>
@@ -112,7 +122,7 @@
 	[legend]="true"
 	[legendTitle]="legendTitle"
 	[legendPosition]="legendPosition"
-	[showGridLines]="true"
+	[showGridLines]="gridLines"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxisLabel]="xAxisLabel"
@@ -120,6 +130,8 @@
 	[yAxisLabelRight]="yAxisLabelRight"
 	[noBarWhenZero]="true"
 	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
 	(select)="onSelect($event)"
 >
 </app-custom-bar>

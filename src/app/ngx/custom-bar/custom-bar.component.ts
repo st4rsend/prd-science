@@ -61,6 +61,8 @@ export class CustomBarComponent extends BaseChartComponent {
   @Input() rangeFillOpacity: number;
   @Input() override animations: boolean = true;
   @Input() noBarWhenZero: boolean = true;
+	@Input() yScaleMin: number;
+	@Input() yScaleMax: number;
 
   @Output() activate: EventEmitter<any> = new EventEmitter();
   @Output() deactivate: EventEmitter<any> = new EventEmitter();
@@ -274,8 +276,10 @@ export class CustomBarComponent extends BaseChartComponent {
       }
     }
 
-    let min = Math.min(...domain);
-    const max = Math.max(...domain);
+    //let min = Math.min(...domain);
+    //const max = Math.max(...domain);
+    let min = this.yScaleMin ? this.yScaleMin : Math.min(...domain);
+    const max = this.yScaleMax ? this.yScaleMax : Math.max(...domain);
     if (this.yRightAxisScaleFactor) {
       const minMax = this.yRightAxisScaleFactor(min, max);
       return [Math.min(0, minMax.min), minMax.max];
@@ -333,9 +337,10 @@ export class CustomBarComponent extends BaseChartComponent {
 
   getYDomain() {
     const values = this.results.map(d => d.value);
-    const min = Math.min(0, ...values);
-    const max = Math.max(...values);
+    const min = this.yScaleMin ? this.yScaleMin : Math.min(0, ...values);
+    const max = this.yScaleMax ? this.yScaleMax : Math.max(...values);
     if (this.yLeftAxisScaleFactor) {
+			console.log("hello");
       const minMax = this.yLeftAxisScaleFactor(min, max);
       return [Math.min(0, minMax.min), minMax.max];
     } else {

@@ -38,12 +38,16 @@ export class DistributionsComponent implements OnInit {
   public showRightYAxisLabel: boolean = true;
   public yAxisLabelRight: string = 'Utilization';
 	
-	public xAxisLabel = 'Country';
-	public yAxisLabel = 'GDP Per Capita';
+	public xAxisLabel = 'Classes';
+	public yAxisLabel = 'Quantité';
 
-
-	public legendTitle: string = 'default title';
-	public legendPosition = LegendPosition.Below;
+	public gridLines: boolean = false;
+	public legendTitle: string = 'Légende';
+	public legendPosition = LegendPosition.Right;
+	public yLeftAxisScale: any = "";
+	public yRightAxisScale: any = "";
+	public yLeftTickFormat: any = "";
+	public yRightTickFormat: any = "";
 
 	public view: [800,400];
 
@@ -95,12 +99,12 @@ export class DistributionsComponent implements OnInit {
 			});
 		};
 		lines.push({
-			name: "mean",
-			series: ar_mean
+			name: "Médiane",
+			series: ar_median
 		});
 		lines.push({
-			name: "median",
-			series: ar_median
+			name: "Moyenne",
+			series: ar_mean
 		});
 		return [bars, lines] as const;
 	}
