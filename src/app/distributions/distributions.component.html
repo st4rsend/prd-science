@@ -16,12 +16,11 @@
 </ngx-charts-bar-horizontal>
 </div>
 -->
-<H3>combo chart</H3>
+<H3>A</H3>
 <div class="graph">
-
 <app-custom-bar
-	[results]="bars"
-	[lineChart]="lines"
+	[results]="A_bars"
+	[lineChart]="A_lines"
 	[scheme]="comboBarScheme"
 	[animations]="true"
 	[colorSchemeLine]="lineChartScheme"
@@ -40,13 +39,91 @@
 	[yAxisLabelRight]="yAxisLabelRight"
 	[noBarWhenZero]="true"
 	[gradient]="true"
-
-
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<H3>B</H3>
+<div class="graph">
+<app-custom-bar
+	[results]="B_bars"
+	[lineChart]="B_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="true"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<H3>C</H3>
+<div class="graph">
+<app-custom-bar
+	[results]="C_bars"
+	[lineChart]="C_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="true"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
 	(select)="onSelect($event)"
 >
 </app-custom-bar>
 </div>
 <H3>NEXT</H3>
+<div class="graph">
+<app-custom-bar
+	[results]="D_bars"
+	[lineChart]="D_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="true"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
 <!--
 <app-custom-bar
 	[view]="view"
