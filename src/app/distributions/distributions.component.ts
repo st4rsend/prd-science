@@ -12,6 +12,8 @@ import * as ss from 'simple-statistics';
 })
 export class DistributionsComponent implements OnInit {
 
+	public content = "$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$"
+
 	public A_bars : Array<{name: string, value: number}> = [];
 	public A_lines: Array<{name: string, series: Array<{name: string, value: number}>}> = [];
 	public B_bars : Array<{name: string, value: number}> = [];

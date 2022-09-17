@@ -13,6 +13,8 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { CustomBarComponent } from './ngx/custom-bar/custom-bar.component';
 import { ComboSeriesVerticalComponent } from './ngx/custom-bar/combo-series-vertical.component';
 
+import { MathjaxModule } from 'mathjax-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { ComboSeriesVerticalComponent } from './ngx/custom-bar/combo-series-vert
 		BrowserAnimationsModule,
 		NoopAnimationsModule,
 		NgxChartsModule,
+		MathjaxModule.forRoot(/*Optional Config*/),
   ],
   providers: [],
   bootstrap: [AppComponent]
