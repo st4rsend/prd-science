@@ -15,6 +15,24 @@ import { ComboSeriesVerticalComponent } from './ngx/custom-bar/combo-series-vert
 
 import { MathjaxModule } from 'mathjax-angular';
 
+let mathjaxConfig = {
+  config: {
+    loader: {
+      //load: ["output/svg", "[tex]/require", "[tex]/ams"]
+      load: ["output/chtml", "[tex]/require", "[tex]/ams"]
+    },
+    tex: {
+      inlineMath: [["$", "$"]],
+      packages: ["base", "require", "ams"]
+    },
+    svg: { "fontCache": "global" }
+  },
+  src: "https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/startup.js",
+	options: {
+		enableMenu: true
+	}
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +48,8 @@ import { MathjaxModule } from 'mathjax-angular';
 		BrowserAnimationsModule,
 		NoopAnimationsModule,
 		NgxChartsModule,
-		MathjaxModule.forRoot(/*Optional Config*/),
+		//MathjaxModule.forRoot(/*Optional Config*/),
+		MathjaxModule.forRoot(mathjaxConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

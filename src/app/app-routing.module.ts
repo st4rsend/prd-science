@@ -6,11 +6,11 @@ import { DistributionsComponent } from './distributions/distributions.component'
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent },
-	{ path: 'home', component: HomeComponent },
+	{ path: '', component: DistributionsComponent },
+	//{ path: 'home', component: HomeComponent },
 	{ path: 'distributions', component:DistributionsComponent },
 	{ path: 'statistiques', component: StatistiquesComponent },
-	{ path: '**', component: HomeComponent }
+	{ path: '**', component: DistributionsComponent }
 
 ];
 @NgModule({

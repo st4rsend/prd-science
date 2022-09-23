@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common'
 import { ScaleType } from '../ngx/common/types/scale-type.enum';
 import { Color, colorSets } from '../ngx/utils/color-sets';
 import { LegendPosition } from '../ngx/common/types/legend.model';
@@ -53,7 +54,7 @@ export class DistributionsComponent implements OnInit {
 
 	public view: [800,400];
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private _document) { }
 
   ngOnInit(): void {
 		let A: Array<number> = [1, 2, 3, 4, 5, 5, 6, 7, 8, 9 ];
@@ -65,6 +66,10 @@ export class DistributionsComponent implements OnInit {
 		[this.B_bars, this.B_lines] = this.buildNgxData(this.autoMap(B));
 		[this.C_bars, this.C_lines] = this.buildNgxData(this.autoMap(C));
 		[this.D_bars, this.D_lines] = this.buildNgxData(this.autoMap(D));
+
+		let windows = this._document.defaultView;
+		console.log(windows.MathJax);
+		//windows.MathJax.startup.output.options.scale=2;
   }
 
 	private autoMap(ar: Array<number>): Map<string, number> {
