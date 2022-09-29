@@ -1,1 +1,155 @@
-<p>statistiques works!</p>
+<H1>Statistiques</H1>
+<H2>MATHJAX example</H2>
+<div class="mathjax" [mathjax]="content"></div> 
+<H1>Moyenne et médiane</H1>
+<H2>Distributions symétriques</H2>
+<div class="graph">
+<app-custom-bar
+	[results]="A_bars"
+	[lineChart]="A_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="gridLines"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
+	[yAxisTickFormatting]="yLeftTickFormat"
+	[yLeftAxisScaleFactor]="yLeftAxisScale"
+	[yRightAxisScaleFactor]="yRightAxisScale"
+	[yRightAxisTickFormatting]="yRightTickFormat"
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<H3>B</H3>
+<div class="graph">
+<app-custom-bar
+	[results]="B_bars"
+	[lineChart]="B_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="gridLines"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<H2>Distributions faussées</H2>
+<div class="graph">
+<app-custom-bar
+	[results]="C_bars"
+	[lineChart]="C_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="gridLines"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<H3>NEXT</H3>
+<div class="graph">
+<app-custom-bar
+	[results]="D_bars"
+	[lineChart]="D_lines"
+	[scheme]="comboBarScheme"
+	[animations]="true"
+	[colorSchemeLine]="lineChartScheme"
+	[tooltipDisabled]="false"
+	[legend]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[legend]="true"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="gridLines"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="true"
+	[gradient]="true"
+	[yScaleMin]=0
+	[yScaleMax]=12
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+</div>
+<!--
+<app-custom-bar
+	[view]="view"
+	[scheme]="comboBarScheme"
+	[colorSchemeLine]="lineChartScheme"
+	[results]="barChart"
+	[animations]="animations"
+	[lineChart]="lineChartSeries"
+	[tooltipDisabled]="tooltipDisabled"
+	[yAxisTickFormatting]="yLeftTickFormat"
+	[yLeftAxisScaleFactor]="yLeftAxisScale"
+	[yRightAxisScaleFactor]="yRightAxisScale"
+	[yRightAxisTickFormatting]="yRightTickFormat"
+	[gradient]="gradient"
+	[xAxis]="showXAxis"
+	[yAxis]="showYAxis"
+	[legend]="showLegend"
+	[legendTitle]="legendTitle"
+	[legendPosition]="legendPosition"
+	[showGridLines]="showGridLines"
+	[showXAxisLabel]="showXAxisLabel"
+	[showYAxisLabel]="showYAxisLabel"
+	[showRightYAxisLabel]="showYAxisLabel"
+	[xAxisLabel]="xAxisLabel"
+	[yAxisLabel]="yAxisLabel"
+	[yAxisLabelRight]="yAxisLabelRight"
+	[noBarWhenZero]="noBarWhenZero"
+	(select)="onSelect($event)"
+>
+</app-custom-bar>
+-->

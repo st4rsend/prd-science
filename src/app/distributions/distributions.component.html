@@ -1,12 +1,27 @@
-<H2>distributions works!</H2>
-<!--
-<H3>Bar chart</H3>
-<div>
+<H1>Distributions</H1>
+<H2>MATHJAX example</H2>
+<div class="mathjax" [mathjax]="content"></div> 
+<H1>Ensemble de données</H1>
+<H2>Quantification</H2>
+Ici des données quantifiés par une mesure.
+<H3>Par exemple</H3>
+<li>Des carottes mesurées par leur longueur</li>
+<li>Des gens mesurés par leur revenu mensuel</li>
+<li>Des gens mesurés par leur âge</li>
+<H2>Découpe</H2>
+<H3>Par dénombrement (Quantiles / qcut)</H3>
+<li>Médiane</li>
+<li>Quartiles</li>
+<li>Déciles</li>
+<li>Centiles</li>
+<H3>A interval constant (cut)</H3>
+Pyramide des âges
+<div class="graph">
 <ngx-charts-bar-horizontal 
-	[results]="ngxCount"
+	[results]="A_bars"
 	[xAxisLabel]="'Fréquence'"
 	[legendTitle]="legendTitle"
-	[yAxisLabel]="'Réponse'"
+	[yAxisLabel]="'Sujet'"
 	[legend]="true"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
@@ -15,157 +30,3 @@
 	[gradient]="true">
 </ngx-charts-bar-horizontal>
 </div>
--->
-<H3>MATHJAX</H3>
-<div class="mathjax" [mathjax]="content"></div> 
-<H3>A</H3>
-<div class="graph">
-<app-custom-bar
-	[results]="A_bars"
-	[lineChart]="A_lines"
-	[scheme]="comboBarScheme"
-	[animations]="true"
-	[colorSchemeLine]="lineChartScheme"
-	[tooltipDisabled]="false"
-	[legend]="true"
-	[xAxis]="true"
-	[yAxis]="true"
-	[legend]="true"
-	[legendTitle]="legendTitle"
-	[legendPosition]="legendPosition"
-	[showGridLines]="gridLines"
-	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
-	[xAxisLabel]="xAxisLabel"
-	[yAxisLabel]="yAxisLabel"
-	[yAxisLabelRight]="yAxisLabelRight"
-	[noBarWhenZero]="true"
-	[gradient]="true"
-	[yScaleMin]=0
-	[yScaleMax]=12
-	[yAxisTickFormatting]="yLeftTickFormat"
-	[yLeftAxisScaleFactor]="yLeftAxisScale"
-	[yRightAxisScaleFactor]="yRightAxisScale"
-	[yRightAxisTickFormatting]="yRightTickFormat"
-	(select)="onSelect($event)"
->
-</app-custom-bar>
-</div>
-<H3>B</H3>
-<div class="graph">
-<app-custom-bar
-	[results]="B_bars"
-	[lineChart]="B_lines"
-	[scheme]="comboBarScheme"
-	[animations]="true"
-	[colorSchemeLine]="lineChartScheme"
-	[tooltipDisabled]="false"
-	[legend]="true"
-	[xAxis]="true"
-	[yAxis]="true"
-	[legend]="true"
-	[legendTitle]="legendTitle"
-	[legendPosition]="legendPosition"
-	[showGridLines]="gridLines"
-	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
-	[xAxisLabel]="xAxisLabel"
-	[yAxisLabel]="yAxisLabel"
-	[yAxisLabelRight]="yAxisLabelRight"
-	[noBarWhenZero]="true"
-	[gradient]="true"
-	[yScaleMin]=0
-	[yScaleMax]=12
-	(select)="onSelect($event)"
->
-</app-custom-bar>
-</div>
-<H3>C</H3>
-<div class="graph">
-<app-custom-bar
-	[results]="C_bars"
-	[lineChart]="C_lines"
-	[scheme]="comboBarScheme"
-	[animations]="true"
-	[colorSchemeLine]="lineChartScheme"
-	[tooltipDisabled]="false"
-	[legend]="true"
-	[xAxis]="true"
-	[yAxis]="true"
-	[legend]="true"
-	[legendTitle]="legendTitle"
-	[legendPosition]="legendPosition"
-	[showGridLines]="gridLines"
-	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
-	[xAxisLabel]="xAxisLabel"
-	[yAxisLabel]="yAxisLabel"
-	[yAxisLabelRight]="yAxisLabelRight"
-	[noBarWhenZero]="true"
-	[gradient]="true"
-	[yScaleMin]=0
-	[yScaleMax]=12
-	(select)="onSelect($event)"
->
-</app-custom-bar>
-</div>
-<H3>NEXT</H3>
-<div class="graph">
-<app-custom-bar
-	[results]="D_bars"
-	[lineChart]="D_lines"
-	[scheme]="comboBarScheme"
-	[animations]="true"
-	[colorSchemeLine]="lineChartScheme"
-	[tooltipDisabled]="false"
-	[legend]="true"
-	[xAxis]="true"
-	[yAxis]="true"
-	[legend]="true"
-	[legendTitle]="legendTitle"
-	[legendPosition]="legendPosition"
-	[showGridLines]="gridLines"
-	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
-	[xAxisLabel]="xAxisLabel"
-	[yAxisLabel]="yAxisLabel"
-	[yAxisLabelRight]="yAxisLabelRight"
-	[noBarWhenZero]="true"
-	[gradient]="true"
-	[yScaleMin]=0
-	[yScaleMax]=12
-	(select)="onSelect($event)"
->
-</app-custom-bar>
-</div>
-<!--
-<app-custom-bar
-	[view]="view"
-	[scheme]="comboBarScheme"
-	[colorSchemeLine]="lineChartScheme"
-	[results]="barChart"
-	[animations]="animations"
-	[lineChart]="lineChartSeries"
-	[tooltipDisabled]="tooltipDisabled"
-	[yAxisTickFormatting]="yLeftTickFormat"
-	[yLeftAxisScaleFactor]="yLeftAxisScale"
-	[yRightAxisScaleFactor]="yRightAxisScale"
-	[yRightAxisTickFormatting]="yRightTickFormat"
-	[gradient]="gradient"
-	[xAxis]="showXAxis"
-	[yAxis]="showYAxis"
-	[legend]="showLegend"
-	[legendTitle]="legendTitle"
-	[legendPosition]="legendPosition"
-	[showGridLines]="showGridLines"
-	[showXAxisLabel]="showXAxisLabel"
-	[showYAxisLabel]="showYAxisLabel"
-	[showRightYAxisLabel]="showYAxisLabel"
-	[xAxisLabel]="xAxisLabel"
-	[yAxisLabel]="yAxisLabel"
-	[yAxisLabelRight]="yAxisLabelRight"
-	[noBarWhenZero]="noBarWhenZero"
-	(select)="onSelect($event)"
->
-</app-custom-bar>
--->
