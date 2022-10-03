@@ -1,7 +1,5 @@
 <H1>Distributions</H1>
-<H2>MATHJAX example</H2>
-<div class="mathjax" [mathjax]="content"></div> 
-<H1>Ensemble de données</H1>
+<H2>Qualification des données</H2>
 <H2>Quantification</H2>
 Ici des données quantifiés par une mesure.
 <H3>Par exemple</H3>
@@ -17,16 +15,19 @@ Ici des données quantifiés par une mesure.
 <H3>A interval constant (cut)</H3>
 Pyramide des âges
 <div class="graph">
-<ngx-charts-bar-horizontal 
+<ngx-charts-bar-vertical
 	[results]="A_bars"
+	[scheme]="comboBarScheme"
 	[xAxisLabel]="'Fréquence'"
 	[legendTitle]="legendTitle"
 	[yAxisLabel]="'Sujet'"
-	[legend]="true"
+	[legend]="false"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxis]="true"
 	[yAxis]="true"
 	[gradient]="true">
-</ngx-charts-bar-horizontal>
+</ngx-charts-bar-vertical>
 </div>
+<H2>MATHJAX example</H2>
+<div class="mathjax" [mathjax]="content"></div> 

@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 import { DistributionsComponent } from './distributions/distributions.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
-import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,9 +37,10 @@ let mathjaxConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+		IntroductionComponent,
     DistributionsComponent,
     StatistiquesComponent,
-    HomeComponent,
     CustomBarComponent,
 		ComboSeriesVerticalComponent,
   ],
