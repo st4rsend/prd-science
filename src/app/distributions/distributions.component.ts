@@ -4,7 +4,7 @@ import { ScaleType } from '../ngx/common/types/scale-type.enum';
 import { Color, colorSets } from '../ngx/utils/color-sets';
 import { LegendPosition } from '../ngx/common/types/legend.model';
 
-import Distribution_1 from '../../assets/distribution_1.json';
+import Pyramide from '../../assets/pyramide_2019.json';
 
 import * as ss from 'simple-statistics';
 
@@ -32,9 +32,9 @@ export class DistributionsComponent implements OnInit {
 	public lineChartScheme: Color = {
     name: 'coolthree',
     selectable: true,
-    group: ScaleType.Ordinal,
+    group: ScaleType.Linear,
     //domain: ['#01579b', '#7aa3e5', '#a8385d', '#00bfa5']
-    domain: ['#01579b']
+    domain: ['#01579b', '#7aa3e5']
   };
 
 	public comboBarScheme: Color = {
@@ -76,14 +76,17 @@ export class DistributionsComponent implements OnInit {
 		let windows = this._document.defaultView;
 		console.log(windows.MathJax);
 		//windows.MathJax.startup.output.options.scale=2;
-		console.log("JSON: ", Distribution_1);
-		for (let row of Distribution_1.data) {
-			let neg = -row[1];
-			this.hommes.push({name: row[0].toString(), value: neg});
+		console.log("JSON: ", Pyramide);
+		for (let row of Pyramide.data) {
+			//let neg = -row[1];
+			this.hommes.push({name: row[0].toString(), value: -row[1]});
+			//this.hommes.push({name: row[0].toString(), value: row[1]});
 			this.femmes.push({name: row[0].toString(), value: row[2]});
 		}
-		console.log("Columns: ", Distribution_1.columns);
-		console.log("Length: ", Distribution_1.index.length);
+		this.hommes.reverse();
+		this.femmes.reverse();
+		console.log("Columns: ", Pyramide.columns);
+		console.log("Length: ", Pyramide.index.length);
 		console.log("H: ", this.hommes);
 		console.log("F: ", this.femmes);
 
@@ -97,6 +100,10 @@ export class DistributionsComponent implements OnInit {
 			index += 1;
 		}
 		return map;
+	}
+
+	xAxisTickFormat(value: number): number {
+		return -value;
 	}
 
 	private buildNgxData(ar: Map<string, number>) {

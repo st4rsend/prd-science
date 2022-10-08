@@ -29,36 +29,40 @@ Pyramide des âges
 	[gradient]="true">
 </ngx-charts-bar-vertical>
 </div>
-<H2>MATHJAX example</H2>
-<div class="mathjax" [mathjax]="content"></div> 
+<div class="pyramide">
 <div class="graph-age">
 <ngx-charts-bar-horizontal
 	[results]="hommes"
 	[scheme]="lineChartScheme"
-	[xAxisLabel]="'Fréquence'"
+	[xAxisLabel]="'Hommes'"
 	[legendTitle]="legendTitle"
-	[yAxisLabel]="'Sujet'"
+	[yAxisLabel]="'Age'"
 	[legend]="false"
 	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
+	[showYAxisLabel]="false"
 	[xAxis]="true"
-	[yAxis]="true"
+	[xAxisTickFormatting]="xAxisTickFormat"
+	[yAxis]="false"
 	[barPadding]="1"
-	[gradient]="true">
+	[gradient]="false">
 </ngx-charts-bar-horizontal>
+</div>
 <div class="graph-age">
 <ngx-charts-bar-horizontal
 	[results]="femmes"
 	[scheme]="lineChartScheme"
-	[xAxisLabel]="'Fréquence'"
+	[xAxisLabel]="'Femmes'"
 	[legendTitle]="legendTitle"
-	[yAxisLabel]="'Sujet'"
+	[yAxisLabel]="'Age'"
 	[legend]="false"
 	[showXAxisLabel]="true"
-	[showYAxisLabel]="true"
+	[showYAxisLabel]="false"
 	[xAxis]="true"
 	[yAxis]="true"
 	[barPadding]="1"
-	[gradient]="true">
+	[gradient]="false">
 </ngx-charts-bar-horizontal>
 </div>
+</div>
+<H2>MATHJAX example</H2>
+<div class="mathjax" [mathjax]="content"></div> 
