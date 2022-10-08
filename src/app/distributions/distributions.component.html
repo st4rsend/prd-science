@@ -31,3 +31,34 @@ Pyramide des âges
 </div>
 <H2>MATHJAX example</H2>
 <div class="mathjax" [mathjax]="content"></div> 
+<div class="graph-age">
+<ngx-charts-bar-horizontal
+	[results]="hommes"
+	[scheme]="lineChartScheme"
+	[xAxisLabel]="'Fréquence'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Sujet'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[barPadding]="1"
+	[gradient]="true">
+</ngx-charts-bar-horizontal>
+<div class="graph-age">
+<ngx-charts-bar-horizontal
+	[results]="femmes"
+	[scheme]="lineChartScheme"
+	[xAxisLabel]="'Fréquence'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Sujet'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[barPadding]="1"
+	[gradient]="true">
+</ngx-charts-bar-horizontal>
+</div>

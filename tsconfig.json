@@ -11,6 +11,10 @@
 		"noImplicitAny": false,
 		"strictNullChecks": false,
 		// eoc
+		// for json import from assets
+		"resolveJsonModule":true,
+		"allowSyntheticDefaultImports": true,
+		// eoc
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
