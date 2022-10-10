@@ -1,34 +1,58 @@
 <H1>Distributions</H1>
-<H2>Qualification des données</H2>
-<H2>Découpe</H2>
-<H3>Par dénombrement (Quantiles / qcut)</H3>
-<li>Médiane</li>
-<li>Quartiles</li>
-<li>Déciles</li>
-<li>Centiles</li>
-<H2>Quantification</H2>
-Ici des données quantifiés par une mesure.
-<H3>Par exemple</H3>
-<li>Des carottes mesurées par leur longueur</li>
-<li>Des gens mesurés par leur revenu mensuel</li>
-<li>Des gens mesurés par leur âge</li>
-<H3>A interval constant (cut)</H3>
-Pyramide des âges
+<p>Cette partie traite de la manière dont les données sont réparties à l'intérieur d'une variable statistique.</p>
+<p>Les représentations visuelles sont abordable et souvent fort utiles, mais peuvent parfois être incomplètes voir trompeuses. La compréhension des constructions de ces représentations nous aidera à conceptualiser et éviter les pièges les plus courants.</p>
+<p></p>
+<H1>Dénombrement</H1>
+<H2>Comptage</H2>
+<p>La première approche, centrale à cette partie, consiste à <b>dénombrer</b> les <b>individus</b> dans chaque <b>classe</b> d'une <b>variable</b> statistique, c'est à dire les compter.</p>
+<H2>Représentation</H2>
+<p>Les diagrammes en barres sont efficaces pour représenter les dénombrements, la barre qui représente une classe est d'autant plus grande qu'il y a d'individus dans celle-ci.</p>
+<p>Les barres peuvent être dessinées horizontalement ou verticalement selon le besoin.</p>
+<H3>Variable nominale</H3>
+<p>Il peut être utile de trier les classes par nombre d'individus pour aider à la conceptualisation de la variable.</p>
+<H4>Exemple des crayons de couleurs</H4>
 <div class="graph">
 <ngx-charts-bar-vertical
-	[results]="A_bars"
+	[results]="crayons"
 	[scheme]="comboBarScheme"
-	[xAxisLabel]="'Fréquence'"
+	[xAxisLabel]="'Classe'"
 	[legendTitle]="legendTitle"
-	[yAxisLabel]="'Sujet'"
+	[yAxisLabel]="'Compte'"
 	[legend]="false"
 	[showXAxisLabel]="true"
 	[showYAxisLabel]="true"
 	[xAxis]="true"
 	[yAxis]="true"
+	[yScaleMax]="6"
 	[gradient]="true">
 </ngx-charts-bar-vertical>
 </div>
+<H3>Variable ordinale</H3>
+<p>Dans le cas d'une variable ordinale le tri naturel est en conurrence avec le tri par nombre selon l'effet visuel attendu.</p>
+<H4>Exemple des notes scolaires</H4>
+<div class="graph">
+<ngx-charts-bar-vertical
+	[results]="notes"
+	[scheme]="comboBarScheme"
+	[xAxisLabel]="'Classe'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Compte'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[yScaleMax]="5"
+	[gradient]="true">
+</ngx-charts-bar-vertical>
+</div>
+<H3>Habitudes</H3>
+<p>Attention: Selon les conventions locales il peut être judicieux de présenter une variable selon un ordre habituel. Le choix est à la discrètion du présentateur et doit etre adaptée à l'effet escompté.</p>
+<H2>Variable quantitatives</H2>
+<p>Spécificité des variables quantitatives.</p>
+<H3>Contraintes informatiques</H3>
+<p>Transformation des variables continues en variables discrètes.<p>
+<H4>Pyramide des âges (2019)</H4>
 <div class="pyramide">
 <div class="graph-age">
 <ngx-charts-bar-horizontal
@@ -64,5 +88,11 @@ Pyramide des âges
 </ngx-charts-bar-horizontal>
 </div>
 </div>
+<H1>Quantiles / qcut</H1>
+<li>Médiane</li>
+<li>Quartiles</li>
+<li>Déciles</li>
+<li>Centiles</li>
+<H4>Exemple des salaires</H4>
 <H2>MATHJAX example</H2>
 <div class="mathjax" [mathjax]="content"></div> 

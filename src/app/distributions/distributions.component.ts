@@ -5,6 +5,8 @@ import { Color, colorSets } from '../ngx/utils/color-sets';
 import { LegendPosition } from '../ngx/common/types/legend.model';
 
 import Pyramide from '../../assets/pyramide_2019.json';
+import Crayons from '../../assets/crayons.json';
+import Notes from '../../assets/notation-alphabetique.json';
 
 import * as ss from 'simple-statistics';
 
@@ -28,6 +30,8 @@ export class DistributionsComponent implements OnInit {
 
 	public femmes : Array<{name: string, value: number}> = [];
 	public hommes : Array<{name: string, value: number}> = [];
+	public crayons: Array<{name: string, value: number}> = [];
+	public notes: Array<{name: string, value: number}> = [];
 
 	public lineChartScheme: Color = {
     name: 'coolthree',
@@ -74,13 +78,11 @@ export class DistributionsComponent implements OnInit {
 		[this.D_bars, this.D_lines] = this.buildNgxData(this.autoMap(D));
 
 		let windows = this._document.defaultView;
-		console.log(windows.MathJax);
+		//console.log(windows.MathJax);
 		//windows.MathJax.startup.output.options.scale=2;
-		console.log("JSON: ", Pyramide);
+		//console.log("JSON: ", Pyramide);
 		for (let row of Pyramide.data) {
-			//let neg = -row[1];
 			this.hommes.push({name: row[0].toString(), value: -row[1]});
-			//this.hommes.push({name: row[0].toString(), value: row[1]});
 			this.femmes.push({name: row[0].toString(), value: row[2]});
 		}
 		this.hommes.reverse();
@@ -89,7 +91,32 @@ export class DistributionsComponent implements OnInit {
 		console.log("Length: ", Pyramide.index.length);
 		console.log("H: ", this.hommes);
 		console.log("F: ", this.femmes);
-
+		let map = new Map<string, number>();
+		for (let row of Crayons.data) {
+			if (map.has(row)) {
+				map.set(row, map.get(row)+1);
+			}
+			else {
+				map.set(row, 1);
+			}
+		}
+		let map_sorted = new Map([...map.entries()].sort((a,b) => a[1] - b[1]))
+		map_sorted.forEach((value: number, key: string) => {
+			this.crayons.push({name: key, value: value});
+		});
+		map = new Map<string, number>();
+		for (let row of Notes.data) {
+			if (map.has(row)) {
+				map.set(row, map.get(row)+1);
+			}
+			else {
+				map.set(row, 1);
+			}
+		}
+		map_sorted = new Map([...map.entries()].sort());
+		map_sorted.forEach((value: number, key: string) => {
+			this.notes.push({name: key, value: value});
+		});
   }
 
 	private autoMap(ar: Array<number>): Map<string, number> {
