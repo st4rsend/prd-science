@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@swimlane/ngx-charts": "^20.1.0",
-    "mathjax-angular": "^1.4.2",
+    "mathjax-angular": "^2.1.1",
     "rxjs": "~7.5.0",
     "simple-statistics": "^7.7.6",
     "tslib": "^2.3.0",

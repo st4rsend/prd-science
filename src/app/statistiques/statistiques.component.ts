@@ -70,7 +70,7 @@ export class StatistiquesComponent implements OnInit {
 		[this.D_bars, this.D_lines] = this.buildNgxData(this.autoMap(D));
 
 		let windows = this._document.defaultView;
-		console.log(windows.MathJax);
+		//console.log(windows.MathJax);
 		//windows.MathJax.startup.output.options.scale=2;
   }
 
