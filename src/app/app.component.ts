@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
   title = 'prd-science';
+	appTheme = 'light-theme';
 
 	constructor(
 		private route: ActivatedRoute,

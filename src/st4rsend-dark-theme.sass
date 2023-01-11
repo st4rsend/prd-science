@@ -1,0 +1,42 @@
+@use '@angular/material' as mat
+@use 'src/cards'
+
+@import 'st4rsend-dark-palette'
+@include mat.core()
+
+$dark-primary: mat.define-palette($st4rsend-dark-primary, 500)
+$dark-accent:  mat.define-palette(mat.$blue-palette, A200, A100, A400)
+$dark-warn:    mat.define-palette(mat.$red-palette)
+$dark-background:  mat.define-palette($st4rsend-dark-background)
+$dark-foreground:  mat.define-palette($st4rsend-dark-foreground)
+
+
+$background-color: mat.get-color-from-palette($dark-background,900)
+$foreground-color: mat.get-color-from-palette($dark-foreground,300)
+
+@import 'st4rsend-dark.scss'
+@include mat.all-component-colors($dark-theme)
+
+
+.dark-theme
+	background-color: $background-color
+	color: $foreground-color
+
+	H1
+		color: mat.get-color-from-palette($dark-background,500)
+		background-image: linear-gradient(to right, $foreground-color, 62%, $background-color 95%)
+	H3
+		color: mat.get-color-from-palette($dark-foreground,A400)
+
+	.card
+		background-color: mat.get-color-from-palette($dark-background,500)
+		color: mat.get-color-from-palette($dark-foreground,A400)
+
+	.card.highlight-card
+		background-color: mat.get-color-from-palette($dark-background,700)
+
+	.card-container
+		background-color: $background-color
+
+	.mat-tree
+		background-color: $background-color
