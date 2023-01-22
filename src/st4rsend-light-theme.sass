@@ -18,6 +18,11 @@ $foreground-color: mat.get-color-from-palette($light-foreground,700)
 @include mat.all-component-colors($light-theme)
 
 .light-theme
+	.ngx-charts g.tick text
+		fill: mat.get-color-from-palette($light-foreground,A400)
+	.ngx-charts .axis>g>text
+		fill: $foreground-color
+
 	background-color: $background-color
 	color: $foreground-color
 

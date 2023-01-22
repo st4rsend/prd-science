@@ -87,10 +87,10 @@ export class DistributionsComponent implements OnInit {
 		}
 		this.hommes.reverse();
 		this.femmes.reverse();
-		console.log("Columns: ", Pyramide.columns);
-		console.log("Length: ", Pyramide.index.length);
-		console.log("H: ", this.hommes);
-		console.log("F: ", this.femmes);
+//		console.log("Columns: ", Pyramide.columns);
+//		console.log("Length: ", Pyramide.index.length);
+//		console.log("H: ", this.hommes);
+//		console.log("F: ", this.femmes);
 		let map = new Map<string, number>();
 		for (let row of Crayons.data) {
 			if (map.has(row)) {

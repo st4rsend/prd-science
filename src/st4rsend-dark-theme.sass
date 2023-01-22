@@ -19,6 +19,12 @@ $foreground-color: mat.get-color-from-palette($dark-foreground,300)
 
 
 .dark-theme
+	.ngx-charts g.tick text
+		fill: mat.get-color-from-palette($dark-foreground,A400)
+
+	.ngx-charts .axis>g>text
+		fill: $foreground-color
+		
 	background-color: $background-color
 	color: $foreground-color
 
