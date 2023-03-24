@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { IntroductionComponent } from './introduction/introduction.component';
-import { DistributionsComponent } from './distributions/distributions.component';
+import { VariablesComponent } from './variables/variables.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -39,7 +39,7 @@ let mathjaxConfig = {
     AppComponent,
     MenuComponent,
 		IntroductionComponent,
-    DistributionsComponent,
+    VariablesComponent,
     StatistiquesComponent,
     CustomBarComponent,
 		ComboSeriesVerticalComponent,

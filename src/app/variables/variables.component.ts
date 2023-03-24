@@ -11,11 +11,11 @@ import Notes from '../../assets/notation-alphabetique.json';
 import * as ss from 'simple-statistics';
 
 @Component({
-  selector: 'app-distributions',
-  templateUrl: './distributions.component.html',
-  styleUrls: ['./distributions.component.sass']
+  selector: 'app-variables',
+  templateUrl: './variables.component.html',
+  styleUrls: ['./variables.component.sass']
 })
-export class DistributionsComponent implements OnInit {
+export class VariablesComponent implements OnInit {
 
 	public content = "$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$"
 

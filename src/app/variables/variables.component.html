@@ -1,0 +1,138 @@
+<H1>Variables</H1>
+<p>
+L'introduction présente la notion de variable statistique.
+</p>
+<p>Cette partie explore comment décrire la répartition des données à l'intérieur d'une variable statistique.
+</p>
+<p>Les représentations visuelles aident à conceptualiser, mais peuvent parfois être incomplètes voir trompeuses. La compréhension des constructions de ces représentations aidera à porter une regard critique et éviter les pièges les plus courants.</p>
+<H2>Notions</H2>
+<H3>Fréquences</H3>
+<p>La première approche consiste à compter ou <b>dénombrer</b> le nombre de fois qu'un <b>individu</b> apparait dans une <b>variable</b> statistique.</p>
+<p>Ainsi se défini la <b>fréquence</b> d'un individu pour une variable statistique.
+</p>
+<H3>Classes</H3>
+<p>
+Une <b>classe</b> est un regroupement d'individus souvent utilisé dans l'étude des variables quantitatives.
+</p>
+<p>
+Les classes peuvent être définies de manière arbitraire ou en utilisant des critères spécifiques, tels que la largeur des classes ou la plage de valeurs.
+</p>
+<H2>Représentations</H2>
+<p>Les diagrammes en barres sont usuels pour représenter les variables, la barre qui représente une classe est d'autant plus grande qu'il y a d'individus dans celle-ci.</p>
+<p>Les barres peuvent être orientées horizontalement ou verticalement selon le besoin.</p>
+<H1>Types de variables</H1>
+<H2>Variable nominale</H2>
+<p>Les classes d'une variable nominale n'ont pas de relation d'ordre, le choix est libre, et peut se révéler judicieux s'il respecte une convention, ou propose un tri ordonné par nombre d'éléments.</p>
+<H3>Exemple des crayons de couleurs</H3>
+<div class="graph">
+<ngx-charts-bar-vertical
+	[results]="crayons"
+	[scheme]="comboBarScheme"
+	[xAxisLabel]="'Classe'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Nombre'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[yScaleMax]="6"
+	[gradient]="true">
+</ngx-charts-bar-vertical>
+</div>
+<H2>Variable ordinale</H2>
+<p>Dans le cas d'une variable ordinale la présentation naturelle respecte la relation d'ordre, mais  est en concurrence avec le tri ordonné selon l'effet attendu.
+</p><p>
+Il appartient en fait au lecteur d'analyser la présence d'une relation d'ordre pour apprécier la présentation choisie.</p>
+<H3>Exemple des notes scolaires</H3>
+<div class="graph">
+<ngx-charts-bar-vertical
+	[results]="notes"
+	[scheme]="comboBarScheme"
+	[xAxisLabel]="'Classe'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Nombre'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="true"
+	[xAxis]="true"
+	[yAxis]="true"
+	[yScaleMax]="5"
+	[gradient]="true">
+</ngx-charts-bar-vertical>
+</div>
+<H2>Variable quantitatives</H2>
+<p>Les variables quantitatives reflètent souvent des mesures du monde réel et sont donc initialement continues.</p>
+<H3>Contraintes</H3>
+<p>
+Se pose en premier lieu le problème du bornage, par exemple sur une échelle de 1 à 10, la mesure 5,6 doit elle être comptée:
+</p>
+<ul>
+<li>Dans la classe 5 des nombres supérieurs à 5 et strictement inférieurs à 6?</li>
+<li>Dans la classe 6 des nombres supérieurs à 5,5 et strictement inférieurs à 6,5?</li>
+<li>Dans la classe 6 des nombres strictement supérieurs à 5,5 et inférieurs à 6,5?</li>
+</ul>
+<p>Les conventions utilisées pour le bornage et la granularité doivent être connues.</p>
+<p>De plus malgré les avancées technologiques, les outils informatiques courants restent hermétiques au traitement de données numériques continues et imposent de transformer ces mesures en variables discrètes.
+</p>
+<p>Certaines problèmatiques, notamment pour des mesures de précision, peuvent imposer de maitrîser la technique de discrétisation mise en oeuvre.</p>
+<H3>Exemple de la pyramide des âges (2019)</H3>
+<div class="pyramide">
+<div class="graph-age">
+<ngx-charts-bar-horizontal
+	[results]="hommes"
+	[scheme]="lineChartScheme"
+	[xAxisLabel]="'Hommes'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Age'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="false"
+	[xAxis]="true"
+	[xAxisTickFormatting]="xAxisTickFormat"
+	[yAxis]="false"
+	[barPadding]="1"
+	[gradient]="false">
+</ngx-charts-bar-horizontal>
+</div>
+<div class="graph-age">
+<ngx-charts-bar-horizontal
+	[results]="femmes"
+	[scheme]="lineChartScheme"
+	[xAxisLabel]="'Femmes'"
+	[legendTitle]="legendTitle"
+	[yAxisLabel]="'Age'"
+	[legend]="false"
+	[showXAxisLabel]="true"
+	[showYAxisLabel]="false"
+	[xAxis]="true"
+	[yAxis]="true"
+	[barPadding]="1"
+	[gradient]="false">
+</ngx-charts-bar-horizontal>
+</div>
+</div>
+<H1>Répartitions</H1>
+<p>Considérant les variables quantitatives et restant dans les mécaniques de comptage simple il est utile d'aborder les notions de médiane, quartile, etc... 
+</p>
+<p>
+La première opération consiste à trier les individus selon la mesure par ordre croissant.
+</p>
+<H2>Quantiles / qcut</H2>
+<p>
+Les quantiles sont une façon de diviser une variable en parties égales. C'est à dire  division équitable de l'ensemble de données en termes de nombre d'individus. 
+</p>
+<H3>Médiane</H3>
+<p>
+La médiane est une mesure qui permet de trouver la valeur qui se situe au milieu d'un groupe de valeurs.
+</p>
+<p>
+Il s'agit donc de diviser en deux parties égales. La médiane est le nombre qui se trouve exactement au milieu de cette liste lorsque les nombres sont classés du plus petit au plus grand.
+</p>
+<H3>Quartiles</H3>
+<H3>Déciles</H3>
+<H3>Centiles</H3>
+<H3>quantiles</H3>
+<H2>Valeurs remarquables</H2>
+<H2>MATHJAX example</H2>
+<div class="mathjax" [mathjax]="content"></div> 
