@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
 						"baseHref": "/prd-science/",
-            "outputPath": "/var/local/publish/html/prd-science",
+            "outputPath": "/var/local/publish/static/prd-science",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
