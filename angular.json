@@ -83,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prd-science:build:production"
+              "buildTarget": "prd-science:build:production"
             },
             "development": {
-              "browserTarget": "prd-science:build:development"
+              "buildTarget": "prd-science:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prd-science:build"
+            "buildTarget": "prd-science:build"
           }
         },
         "test": {
